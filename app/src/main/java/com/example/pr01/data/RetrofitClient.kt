@@ -23,4 +23,5 @@ object RetrofitClient {
         .build()
 
     val quoteAPI = retrofit.create(RetrofitInterface::class.java)
+    val productAPI = retrofit.create(ProductInterface::class.java)
 }
