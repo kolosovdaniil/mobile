@@ -1,6 +1,5 @@
-package com.example.pr01.data
+package com.example.pr01.data.service
 
-import com.example.pr01.model.Quote
 import com.example.pr01.model.ResQuote
 import retrofit2.http.GET
 
