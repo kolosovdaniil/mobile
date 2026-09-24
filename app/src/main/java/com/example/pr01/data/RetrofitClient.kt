@@ -1,5 +1,6 @@
 package com.example.pr01.data
 
+import com.example.pr01.data.service.RecipeInterface
 import com.example.pr01.data.service.RetrofitInterface
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -25,4 +26,6 @@ object RetrofitClient {
 
     val quoteAPI = retrofit.create(RetrofitInterface::class.java)
     val productAPI = retrofit.create(ProductInterface::class.java)
+
+    val recipeAPI = retrofit.create(RecipeInterface::class.java)
 }

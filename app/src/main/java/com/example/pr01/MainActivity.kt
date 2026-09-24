@@ -4,17 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.pr01.model.Product
-import com.example.pr01.ui.theme.PR01Theme
+import com.example.pr01.data.model.Instruction
+import com.example.pr01.data.model.Product
+import com.example.pr01.data.model.Recipe
+import com.example.pr01.data.model.Tag
 import com.example.pr01.ui.theme.viewModel.ProductViewModel
+import com.example.pr01.ui.theme.viewModel.RecipeViewModel
 import com.example.pr01.ui.theme.viewModel.RetrofitViewModel
 
 class MainActivity : ComponentActivity() {
@@ -24,13 +20,35 @@ class MainActivity : ComponentActivity() {
         setContent {
 //           val retrofitViewModel: RetrofitViewModel = viewModel()
 //           retrofitViewModel.fetchQuotas()
-            val ProductViewModel: ProductViewModel = viewModel()
-            val product = Product(
-                title = "Офисное кресло Comfort-Т",
-                price = 14200.0,
-                stock = 3
+
+
+//            val productViewModel: ProductViewModel = viewModel()
+//            val product = Product(
+//                title = "Офисное кресло Comfort-Т",
+//                price = 14200.0,
+//                stock = 3,
+//                category = "Мебель"
+//            )
+//            productViewModel.createProduct(product)
+
+            val recipeViewModel: RecipeViewModel = viewModel()
+
+
+            val recipe = Recipe(
+                id=61,
+                name = "Традиционная паэлья с морепродуктами",
+                instructions = listOf(
+                    Instruction("")
+                ),
+                tags = listOf(
+                    Tag("Обед"),
+                    Tag("Ужин"),
+                    Tag("Морепродукты"),
+                    Tag("ИспанскаяКухня"),
+                    Tag("ПраздничноеБлюдо")
+                ),
+                rating = 4.9
             )
-            ProductViewModel.CreateProduct(product)
         }
     }
 }
