@@ -22,8 +22,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-//            val retrofitViewModel: RetrofitViewModel = viewModel()
-//            retrofitViewModel.fetchQuotas()
+//           val retrofitViewModel: RetrofitViewModel = viewModel()
+//           retrofitViewModel.fetchQuotas()
             val ProductViewModel: ProductViewModel = viewModel()
             val product = Product(
                 title = "Офисное кресло Comfort-Т",

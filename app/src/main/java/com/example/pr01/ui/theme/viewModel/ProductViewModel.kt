@@ -12,7 +12,7 @@ class ProductViewModel: ViewModel() {
         viewModelScope.launch {
             try {
                 val response = RetrofitClient.productAPI.addProduct(product)
-                Log.d("RetrofitViewModel","id: ${product.id}, title: ${product.title}, price: ${product.price}, category${product.category}, stock ${product.stock}")
+                Log.d("RetrofitViewModel","id: ${product.id}, title: ${product.title}, price: ${product.price}, category: ${product.category}, stock: ${product.stock}")
             } catch (e: Exception){
                 Log.e("ProductViewModel", e.message.toString())
             }

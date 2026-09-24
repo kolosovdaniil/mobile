@@ -14,6 +14,7 @@ object RetrofitClient {
     }
     val proxy = Proxy(Proxy.Type.HTTP, InetSocketAddress("10.207.106.59", 3128))
     val okHttpClient = OkHttpClient.Builder()
+        .proxy(proxy)
         .addInterceptor(loggingInterceptor)
         .build()
     val retrofit = Retrofit.Builder()
