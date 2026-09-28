@@ -6,14 +6,15 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pr01.ui.theme.viewModel.RecipeViewModel
+import com.example.pr01.ui.theme.viewModel.UserViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val recipeViewModel: RecipeViewModel = viewModel()
-            recipeViewModel.updateRecipe()
+            val userViewModel: UserViewModel = viewModel()
+            userViewModel.deleteUser(8)
         }
     }
 }

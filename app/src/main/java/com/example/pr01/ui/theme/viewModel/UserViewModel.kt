@@ -11,7 +11,7 @@ class UserViewModel: ViewModel() {
         viewModelScope.launch {
             try {
                 val deletedUser = RetrofitClient.userAPI.deleteUserById(id)
-                Log.d("UserViewModel", "${deletedUser.id}: ${deletedUser.isDeleted}")
+                Log.d("UserViewModel", "id: ${deletedUser.id}, isDeleted: ${deletedUser.isDeleted}, firstName: ${deletedUser.firstName}, lastName: ${deletedUser.lastName}, maidenName: ${deletedUser.maidenName}")
             } catch (e: Exception){
                 Log.e("UserViewModel", e.message.toString())
             }
