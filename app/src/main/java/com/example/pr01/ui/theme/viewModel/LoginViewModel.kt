@@ -11,8 +11,11 @@ class LoginViewModel: ViewModel() {
     fun login(loginRequest: LoginRequest) {
         viewModelScope.launch {
             try{
-            val user = RetrofitClient.authAPI.login(loginRequest)
-                Log.d("LoginViewModel",  "Access token: ${user.accessToken}")
+            val  authorizedUser = RetrofitClient.authAPI.login(loginRequest)
+                Log.d("LoginViewModel", authorizedUser.accessToken.toString())
+
+                val user =  RetrofitClient.userAPI.getCurrentUser("Bearer ${authorizedUser.accessToken}")
+                Log.d("LoginViewModel", "${user.lastName} ${user.firstName}")
             }
             catch (ex: Exception){
                 Log.e("LoginViewModel", ex.message.toString())
