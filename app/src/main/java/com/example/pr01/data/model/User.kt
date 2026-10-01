@@ -1,10 +1,11 @@
 package com.example.pr01.data.model
 
+import android.util.Printer
+
 data class User(
-    val id : Int? = null,
-    val firstName: String,
-    val lastName: String,
-    val maidenName: String,
-    val isDeleted: Boolean = false,
-    val accessToken: String? = null
-)
+   override val id : Int? = null,
+   override val firstName: String,
+   override val lastName: String,
+   override val maidenName: String,
+   override val isDeleted: Boolean = false
+) : Profile
