@@ -5,8 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.pr01.data.model.AuthRequest
 import com.example.pr01.data.model.LoginRequest
 import com.example.pr01.ui.theme.viewModel.LoginViewModel
+import com.example.pr01.ui.theme.viewModel.QuotesViewModel
 import com.example.pr01.ui.theme.viewModel.RecipeViewModel
 import com.example.pr01.ui.theme.viewModel.UserViewModel
 
@@ -15,12 +17,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val loginViewModel: LoginViewModel = viewModel()
-            val loginRequest = LoginRequest(
-                username = "emilys",
-                password = "emilyspass"
+            val quotesViewModel: QuotesViewModel = viewModel()
+            val authRequest = AuthRequest(
+                identity = "kolosovdaniil883@gmail.com",
+                password = "kolosovdaniil"
             )
-            loginViewModel.login(loginRequest)
+            quotesViewModel.login(authRequest)
         }
     }
 }
