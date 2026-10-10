@@ -1,6 +1,7 @@
 [versions]
 agp = "9.4.0"
 coreKtx = "1.10.1"
+datastorePreferences = "1.2.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
@@ -12,6 +13,7 @@ retrofit = "3.0.0"
 logging-interceptor = "5.5.0"
 
 [libraries]
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 retrofit = {module="com.squareup.retrofit2:retrofit", version.ref = "retrofit"}
 gson = {module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit"}
 viewModel = {module = "androidx.lifecycle:lifecycle-viewmodel-compose"}
