@@ -18,7 +18,10 @@ class MainActivity : ComponentActivity() {
                 identity = "kolosovdaniil883@gmail.com",
                 password = "kolosovdaniil"
             )
-            quotesViewModel.login(authRequest)
+            quotesViewModel.login(
+                context = applicationContext,
+                authRequest = authRequest
+            )
         }
     }
 }
