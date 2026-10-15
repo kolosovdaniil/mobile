@@ -18,16 +18,9 @@ class QuotesViewModel(private val tokenManager: TokenManager) : ViewModel() {
                 val items = records.items
 
                 for (item in items) {
-                    Log.d("QuotesViewModel", "id:${item.id}\n" +
-                            "quote:${item.quote}\n" +
-                            "author:${item.author}\n" +
-                            "created:${item.created}\n" +
-                            "updated:${item.updated}\n")
+                    Log.d("QuotesViewModel", "id: ${item.id}, quote: ${item.quote}, author: ${item.author}, created: ${item.created}, updated: ${item.updated}")
                 }
-                Log.d("QuotesViewModel", "" +
-                        " page:${records.page}\n " +
-                        "perPage:${records.perPage}\n totalItems:${records.totalItems}\n " +
-                        "totalPages:${records.totalPages}")
+                Log.d("QuotesViewModel", "page: ${records.page}, perPage: ${records.perPage}, totalItems: ${records.totalItems}, totalPages: ${records.totalPages}")
             } catch (ex: Exception) {
                 Log.e("QuotesViewModel", "${ex.message}")
             }

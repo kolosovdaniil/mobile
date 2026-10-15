@@ -16,16 +16,11 @@ class TokenManager(private val context: Context) {
         val ACCESS_TOKEN = stringPreferencesKey("access_token")
 
     }
-
-
-
     suspend fun saveToken(token : String) {
         context.dataStore.edit {preferences ->
                 preferences[ACCESS_TOKEN] = token
             }
         }
-
-
 
     fun tokenFlow(): Flow<String?> =
         context.dataStore.data.map { preferences -> preferences[ACCESS_TOKEN]}

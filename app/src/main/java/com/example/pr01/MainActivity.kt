@@ -19,7 +19,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val tokenManager = TokenManager(applicationContext)
-
             val quotesViewModel: QuotesViewModel by viewModels {
                 viewModelFactory {
                     initializer {

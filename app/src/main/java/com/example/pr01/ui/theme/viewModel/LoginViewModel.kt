@@ -17,13 +17,13 @@ class LoginViewModel(
         viewModelScope.launch {
             try {
                 val authUser = RetrofitClient.authApi.login(authRequest)
-                Log.d("LoginViewModel", "User: ${authUser.token} ${authUser.record}")
+                Log.d("LoginViewModel", "Token: ${authUser.token}, Record: ${authUser.record}")
                 authUser.token?.let {
                     writeToken(it)
                     quotesViewModel.quotesFetch()
                 }
             } catch (e: Exception) {
-                Log.e("RetrofitError", e.message.toString())
+                Log.e("LoginViewModel", e.message.toString())
             }
         }
     }
